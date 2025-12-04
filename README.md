@@ -19,13 +19,13 @@
 ## 2. 환경 설정 및 사용법
 
 ### 설치 요구 사항
-'''bash
+```bash
 pip install networkx numpy matplotlib scipy
-'''
+```
 
 ### 패키지 불러오기
 프로젝터 폴더를 클론한 후, 다음과 같이 클래스를 불러와 사용합니다.
-'''python
+```python
 # analysis_script.py 에서
 from random_nets import RandomNetGenerator 
 import networkx as nx
@@ -41,6 +41,6 @@ generator = RandomNetGenerator(N_nodes=N, initial_degrees=degrees)
 # 3. 모델 생성 (앙상블 생성 루프에 사용)
 G_er_sample = generator.create_er_net(p=0.08)
 G_cm_sample = generator.create_config_model()
-'''
+```
 
 ## 핵심 분석 결과 요약
