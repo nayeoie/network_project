@@ -14,7 +14,7 @@ def ensemble_average(results_list) :
   # ---------- 리스트 내부의 딕셔너리를 정렬 ---------- 
 
   try :
-    sorted_keys = sorted(result_list[0].key())
+    sorted_keys = sorted(results_list[0].key())
 
   except Exception as e :
     raise RuntimeError('[ensemble_average] 정렬 과정에서 오류가 발생하였습니다. 오류 : {}'.format(e))
