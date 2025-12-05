@@ -20,7 +20,8 @@ def load_network_from_file(file_path) :
       node_a, node_b = line.split(',')
 
       # ---------- 노드 이름 변경 ----------
-      
+
+      # 🚨 네트워크 분석의 편의성을 위해 노드 이름을 household0000 형태로 변경함
       if node_a not in node_dict :
         node_dict[node_a] = 'household{:04d}'.format(idx)
         idx += 1
