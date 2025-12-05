@@ -12,7 +12,7 @@ from network_tool_pkg.utils.global_utils import calculate_global
 
 # 중심성 및 랜덤 모델 생성 클래스
 from network_tool_pkg.analysis.centrality_generator import CentralityCalculator
-from network_tool_pkg.analysis.radom_nets_generator import RandomNetGenerator
+from network_tool_pkg.analysis.random_nets_generator import RandomNetGenerator
 
 # ====================================================================
 # 1. 데이터 준비
