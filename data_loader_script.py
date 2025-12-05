@@ -4,7 +4,7 @@ import networkx as nx
 def load_network_from_file(file_path) :
 
   # 🚨 파일 형식 : 각 줄이 'nodeA,nodeB' 형식으로 이루어진 경우에만 사용 가능
-  # 🚨 프로젝트에 사용한 Ugandan friendship에 해당하는 'householdA,householdB'로 노드 이름을 변경
+  # 🚨 프로젝트에 사용한 Ugandan friendship에 해당하는 'household0001,household0002'로 노드 이름을 변경
 
   G_load = nx.Graph()
   node_dict = {}
