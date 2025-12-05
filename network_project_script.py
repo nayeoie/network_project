@@ -14,11 +14,14 @@ from network_tool_pkg.utils.global_utils import calculate_global
 from network_tool_pkg.analysis.centrality_generator import CentralityCalculator
 from network_tool_pkg.analysis.random_nets_generator import RandomNetGenerator
 
+# 데이터 로더
+# from data_loader_script import load_network_from_file
+
 # ====================================================================
 # 1. 데이터 준비
 # ====================================================================
 
-# 🚨 파일 로드 경로 (Google Drive 경로의 Collab 환경 가정)
+# 🚨 파일 로드 경로 (Google Drive 경로의 Collab 환경 가정, 사용 시 주석 해제)
 # FILE_PATH = '/content/drive/MyDrive/data/friendship/6'
 
 # 🚨 원본 네트워크 로드 (load_network_from_file 함수를 통해 data를 network 형태로 변경 ~ data_loader_script.py 참조)
@@ -47,7 +50,7 @@ print('----- 1단계 : 데이터 전처리가 완료되었습니다 -----')
 N = G_project.number_of_nodes()
 NUM_SIMULATIONS = 100 
 ER_P = 0.08
-BA_M = 2
+# BA_M = 2 ~ BA 모델 미사용
 
 # ---------- 클래스 인스턴스화 ----------
 
@@ -153,7 +156,7 @@ er_global_metrics = ensemble_average(er_global_list)
 cf_global_metrics = ensemble_average(cf_global_list)
 cl_global_metrics = ensemble_average(cl_global_list)
 
-
+print('----- 5단계 : 전역 지표 비교를 위한 계산이 완료되었습니다 -----')
 
 # ====================================================================
 # 6. 시각화
