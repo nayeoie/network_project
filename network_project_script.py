@@ -196,7 +196,9 @@ ax.plot(nodes_sorted, avg_cf_btw, linstyle = '--', color = 'red', label = 'Confi
 ax.plot(nodes_sorted, avg_cl_btw, linstyle = '--', color = 'green', label = 'Chung_Lu')
 
 ax.set_title('Betweenness Centrality: Original vs Random Models')
-
+ax.set_xlabel('Node ID')
+ax.set_ylabel('Betweenness Centrality')
+ax.
 
 
 
