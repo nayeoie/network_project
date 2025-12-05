@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # 데이터 전처리 함수
 from network_tool_pkg.utils.preprocessing import preprocess_network
 from network_tool_pkg.utils.degree_utils import create_degree_sequence, preprocess_stub
-from network_tool_pkg.utils.average_utils import average_centrality
+from network_tool_pkg.utils.average_utils import ensemble_average
 
 # 중심성 및 랜덤 모델 생성 클래스
 from network_tool_pkg.analysis.centrality_generator import CentralityCalculator
@@ -118,15 +118,15 @@ nodes_sorted = sorted(G_project.nodes())
 
 # Betweenness Centrality 평균화
 original_btw_sorted = np.array([original_btw[n] for n in nodes_sorted])
-avg_er_btw = average_centrality(er_btw_list)
-avg_cf_btw = average_centrality(cf_btw_list)
-avg_cl_btw = average_centrality(cl_btw_list)
+avg_er_btw = ensemble_average(er_btw_list)
+avg_cf_btw = ensemble_average(cf_btw_list)
+avg_cl_btw = ensemble_average(cl_btw_list)
 
 # Closeness Centrality 평균화
 original_cls_sorted = np.array([original_cls[n] for n in nodes_sorted])
-avg_er_cls = average_centrality(er_cls_list)
-avg_cf_cls = average_centrality(cf_cls_list)
-avg_cl_cls = average_centrality(cl_cls_list)
+avg_er_cls = ensemble_average(er_cls_list)
+avg_cf_cls = ensemble_average(cf_cls_list)
+avg_cl_cls = ensemble_average(cl_cls_list)
 
 print('----- 4단계 : 중심성 지표 비교를 위한 앙상블 평균화가 완료되었습니다 -----')
 
