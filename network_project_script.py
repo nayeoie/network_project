@@ -50,7 +50,7 @@ print('----- 1단계 : 데이터 전처리가 완료되었습니다 -----')
 # ====================================================================
 
 N = G_project.number_of_nodes()
-NUM_SIMULATIONS = 10
+NUM_SIMULATIONS = 3
 ER_P = 0.14
 # BA_M = 2 ~ BA 모델 미사용
 
@@ -218,15 +218,15 @@ print('----- Degree Histogram 시각화가 완료되었습니다 -----')
 
 fig, ax = plt.subplots(figsize = (9, 5))
 
-ax.plot(nodes_sorted, original_btw_sorted, label = 'Original', color = 'black', linewidth = 2.2, linestyle='-')
-ax.plot(nodes_sorted, avg_er_btw, label = 'ER', color = 'blue', linewidth = 2, alpha = 0.85, linestyle=':')
-ax.plot(nodes_sorted, avg_cf_btw, label = 'Configuration', color = 'red', linewidth = 2, alpha = 0.85, linestyle='--')
-ax.plot(nodes_sorted, avg_cl_btw, label = 'Chung-Lu', color = 'green', linewidth = 2, alpha = 0.85, linestyle='-.')
+ax.plot(nodes_sorted, original_btw_sorted, label = 'Original', color = 'black', linewidth = 2.5, linestyle='-')
+ax.plot(nodes_sorted, avg_er_btw, label = 'ER', color = 'blue', linewidth = 2, alpha = 0.75, linestyle='-')
+ax.plot(nodes_sorted, avg_cf_btw, label = 'Configuration', color = 'red', linewidth = 2, alpha = 0.75, linestyle='-')
+ax.plot(nodes_sorted, avg_cl_btw, label = 'Chung-Lu', color = 'green', linewidth = 2, alpha = 0.75, linestyle='-')
 
-step = max(1, len(nodes_sorted) // 10)
+step = max(1, len(nodes_sorted) // 4)
 ax.set_xticks(nodes_sorted[::step])
 ax.set_xticklabels(nodes_sorted[::step], rotation = 45)
-ax.tick_params(axis = 'x', labelsize=8)
+ax.tick_params(axis = 'x', labelsize = 8)
 
 ax.set_title('Betweenness Centrality Comparison (ensemble = {})'.format(NUM_SIMULATIONS))
 ax.set_xlabel('Node ID')
@@ -245,12 +245,12 @@ print('----- Betweenness Centrality 시각화가 완료되었습니다 -----')
 
 fig, ax = plt.subplots(figsize = (9, 5))
 
-ax.plot(nodes_sorted, original_cls_sorted, label = 'Original', color = 'black', linewidth = 2.2, linestyle='-')
-ax.plot(nodes_sorted, avg_er_cls, label = 'ER', color = 'blue', linewidth = 2, alpha = 0.85, linestyle=':')
-ax.plot(nodes_sorted, avg_cf_cls, label = 'Configuration', color = 'red', linewidth = 2, alpha = 0.85, linestyle='--')
-ax.plot(nodes_sorted, avg_cl_cls, label = 'Chung-Lu', color = 'green', linewidth = 2, alpha = 0.85, linestyle='-.')
+ax.plot(nodes_sorted, original_cls_sorted, label = 'Original', color = 'black', linewidth = 2.5, linestyle='-')
+ax.plot(nodes_sorted, avg_er_cls, label = 'ER', color = 'blue', linewidth = 2, alpha = 0.75, linestyle='-')
+ax.plot(nodes_sorted, avg_cf_cls, label = 'Configuration', color = 'red', linewidth = 2, alpha = 0.75, linestyle='-')
+ax.plot(nodes_sorted, avg_cl_cls, label = 'Chung-Lu', color = 'green', linewidth = 2, alpha = 0.75, linestyle='-')
 
-step = max(1, len(nodes_sorted) // 10)
+step = max(1, len(nodes_sorted) // 4)
 ax.set_xticks(nodes_sorted[::step])
 ax.set_xticklabels(nodes_sorted[::step], rotation = 45)
 ax.tick_params(axis = 'x', labelsize = 8)
