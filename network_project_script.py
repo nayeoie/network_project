@@ -57,7 +57,7 @@ ER_P = 0.14
 # ---------- 클래스 인스턴스화 ----------
 
 # 제너레이터 클래스 인스턴스화
-print(f'DEBUG N-CHECK : 메인 스크립트의 최종 N 값 = {N}') # 👈 karate ~ 34가 나와야 함
+# print(f'DEBUG N-CHECK : 메인 스크립트의 최종 N 값 = {N}') # 👈 karate ~ 34가 나와야 함
 generator = RandomNetGenerator(N_nodes = N, initial_degrees = degrees_project)
 
 # 중심성 계산 클래스 인스턴스화
@@ -104,7 +104,7 @@ print('----- {}회 앙상블 시뮬레이션 시작 -----'.format(NUM_SIMULATION
 
 for i in range(NUM_SIMULATIONS) :
   
-  print(f'DEBUG P-CHECK : 현재 ER_P 값 = {ER_P}')
+  # print(f'DEBUG P-CHECK : 현재 ER_P 값 = {ER_P}')
   
   # 모델 생성
   G_er = generator.create_er_net(ER_P)
