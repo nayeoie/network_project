@@ -22,6 +22,7 @@
 같은 가구(가족 구성원)는 포함하지 마세요.
 가장 친한 사람부터 순서대로 이름을 말해주세요.
 오직 같은 마을에 있는 사람만 이름을 적어주세요.
+<img width="2313" height="756" alt="image" src="https://github.com/user-attachments/assets/427e09be-4053-4ab8-9e3c-e464b988ffb6" />
 
 ## 🎯 (1) 프로젝트 목표
 
