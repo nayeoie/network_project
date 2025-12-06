@@ -23,14 +23,14 @@ from data_loader_script import load_network_from_file
 # ====================================================================
 
 # 🚨 파일 로드 경로 (Google Drive 경로의 Collab 환경 가정, 사용 시 주석 해제)
-FILE_PATH = '/content/drive/MyDrive/data/friendship/6'
+# FILE_PATH = '/content/drive/MyDrive/data/friendship/6'
 # FILE_PATH = 'C:/network_pj/network_project/data/friendship/6'
 
 # 🚨 원본 네트워크 로드 (load_network_from_file 함수를 통해 data를 network 형태로 변경 ~ data_loader_script.py 참조)
-G_original = load_network_from_file(FILE_PATH)
+# G_original = load_network_from_file(FILE_PATH)
 
 # 테스트 및 예시를 위해 karate club network의 데이터를 G_original에 할당 (미사용 시 주석 설정)
-#G_original = nx.karate_club_graph()
+G_original = nx.karate_club_graph()
 
 # ---------- 데이터 전처리 실행 ----------
 
@@ -56,8 +56,11 @@ ER_P = 0.14
 
 # ---------- 클래스 인스턴스화 ----------
 
-# 제너레이터 클래스 인스턴스화
+
+# 🚨 DEBUG
 # print(f'DEBUG N-CHECK : 메인 스크립트의 최종 N 값 = {N}') # 👈 karate ~ 34가 나와야 함
+
+# 제너레이터 클래스 인스턴스화
 generator = RandomNetGenerator(N_nodes = N, initial_degrees = degrees_project)
 
 # 중심성 계산 클래스 인스턴스화
@@ -104,6 +107,7 @@ print('----- {}회 앙상블 시뮬레이션 시작 -----'.format(NUM_SIMULATION
 
 for i in range(NUM_SIMULATIONS) :
   
+  # 🚨 DEBUG
   # print(f'DEBUG P-CHECK : 현재 ER_P 값 = {ER_P}')
   
   # 모델 생성
@@ -173,8 +177,8 @@ cl_global_metrics = ensemble_average(cl_global_list)
 
 print('----- 5단계 : 전역 지표 비교를 위한 계산이 완료되었습니다 -----')
 
-# 랜덤 모델의 LCC 크기가 작아서 발생하는 전역 지표 값 이상 생성 확인
-diagnose_lcc_size(G_project, generator, ER_P)
+# 🚨 랜덤 모델의 LCC 크기가 작아서 발생하는 전역 지표 값 이상 생성 확인 -> 시각화를 위해 동일한 값으로 고정시킴
+# diagnose_lcc_size(G_project, generator, ER_P)
 
 # ====================================================================
 # 6. 시각화
