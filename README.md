@@ -267,6 +267,9 @@ ER, Configuration, Chung-Lu 모델과 비교 분석하였다.
 #
 
 ### 🔹 Degree Distribution
+<p align="center">
+  <img src="./assets/Degree_compare_final.jpg" width="700" alt="Degree 비교 결과" />
+</p>
 - **ER 모델**은 완전 무작위 분포(Poisson 형태)로, 원본과 매우 다름.
 - **Configuration 모델**은 degree를 그대로 보존하므로 가장 정확함.
 - **Chung-Lu 모델**은 기대 차수 기반으로 Configuration과 유사한 형태 재현.
@@ -276,6 +279,9 @@ ER, Configuration, Chung-Lu 모델과 비교 분석하였다.
 #
 
 ### 🔹 Betweenness
+<p align="center">
+  <img src="./assets/Betweenness_compare_final.jpg" width="700" alt="betweenness 비교 결과" />
+</p>
 - **랜덤 모델 (ER/CF/CL)**: $C_B \approx 0$ 부근에 극단적으로 집중된 피크만 보여주며, 이는 중개 노드의 역할을 생성하는 데 실패했음을 의미함.
 
   
@@ -286,6 +292,11 @@ ER, Configuration, Chung-Lu 모델과 비교 분석하였다.
 #
 
 ### 🔹 Closeness Centrality
+
+<p align="center">
+  <img src="./assets/Closeness_compare_final.jpg" width="700" alt="closeness 비교 결과" />
+</p>
+
 - **ER 모델**은 $\mathbf{0.3}$ 근처에 매우 좁고 높은 피크를 형성하며, 모든 노드의 접근성이 유사해지는 비현실적인 균일성을 보임.
 - **원본 네트워크**: ER 대비 분포가 훨씬 넓게 퍼져 접근성의 이질성이 큼.
 
