@@ -295,7 +295,10 @@ ER, Configuration, Chung-Lu 모델과 비교 분석하였다.
 
 ### 🔹 Global Metrics
 
-![프로젝트 구조 다이어그램](./assets/jpgs/Global_compare final_page.jpg)
+<p align="center">
+  <img src="./assets/closeness_compare.png" width="600" alt="클로즈니스 비교 결과" />
+</p>
+
 - **Clustering Coefficient (CC)** :
   - 의미: Original이 ER보다 2배 이상 높은 군집도를 보임. 우간다 공동체 네트워크에는 **무작위 우연으로는 설명되지 않는 강한 지역적 뭉침(파벌)**이 존재함.
 - **Average Path Length (APL)** :
@@ -308,17 +311,25 @@ ER, Configuration, Chung-Lu 모델과 비교 분석하였다.
 
 ---
 
-# ⭐️ 결론 ⭐️
+# ⭐️ 결론 : 우간다 네트워크 구조 검증⭐️
 
-종합하면 우간다 네트워크는…
+### ❌ 단순 무작위 모델의 실패 (ER)
+- Degree Distribution, Global Metrics 분석 결과, ER 모델은 연결패턴과 Clustering Coefficient($\text{CC} \approx 0.07$)를 재현하는 데 실패
+- ER 모델은 원본 네트워크를 비현실적으로 조밀하게 만들어 (Diameter $\approx 4.11$) 구조를 왜곡
+### ✔ degree 기반 모델의 한계 (CF/CL)
+- Configuration, Chung-Lu 모델은 차수 분포 및 **최대 크기(Diameter $\approx 5.0$ )**를 성공적으로 모방
+- 그러나 Betweenness, Closeness Centrality 분포 비교에서, 이 모델들은 원본 네트워크의 중개노드, 중앙허브를 재현하지 못하고 $C_B \approx 0$에 집중됨
 
-### ✔ 단순한 무작위 구조(ER)로는 절대 설명되지 않으며
-### ✔ degree 기반 모델(CF/CL)이 부분적으로는 유사하지만
-### ✔ 중심성 구조(중앙 허브·중개 노드)는 어떤 랜덤 모델도 재현하지 못한다.
+### 🔍구조적 특징
+- 강한 지역적 뭉침: 무작위 모델보다 높은 클러스터링 계수 ($\approx 0.15$)를 가짐.
+- 통제 계층 존재: Betweenness Centrality에서 **핵심 중개 노드(Bottleneck)**가 명확히 존재함.
+- 높은 이질성: Closeness Centrality 분포가 넓어 접근성 면에서 노드 간의 다양성이 큼.
+
+#
 
 **따라서 이 네트워크는**
 **공동체의 사회적 규칙·중심 인물·지역적 구조가 결합된 현실적인 사회 네트워크 형태**이며,
 **단순 확률 모델 이상의 고차 메커니즘**을 반영한다고 볼 수 있다.
 
-이 패키지는 이러한 구조적 특징을 비교·검증하기 위한
-**재사용 가능한 네트워크 분석 도구**로 활용할 수 있다.
+
+본 프로젝트에서 구축한 패키지화된 분석 도구(network_tool_pkg)는 이러한 구조적 특징을 재현하는 새로운 네트워크 모델의 유효성을 비교·검증하는 데 **재사용 가능한 분석 플랫폼**으로 활용될 수 있다.
